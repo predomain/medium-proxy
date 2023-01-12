@@ -7,7 +7,7 @@ const fetch = require("node-fetch");
 const getBlogEveryMs = 1000 * 60 * 5;
 const blogLink = "https://predomain.medium.com/feed";
 const api = express();
-const apiPort = 42069;
+const apiPort = 8443;
 let blog = "";
 const getBlog = async () => {
   const get = await fetch(blogLink, {
