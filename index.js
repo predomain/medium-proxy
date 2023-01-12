@@ -36,6 +36,7 @@ https
     {
       key: fs.readFileSync(__dirname + "/ssl/server.key", "utf8"),
       cert: fs.readFileSync(__dirname + "/ssl/server.cert", "utf8"),
+      ca: fs.readFileSync(__dirname + "/ssl/server.ca", "utf8"),
     },
     api
   )
