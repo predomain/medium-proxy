@@ -1,6 +1,7 @@
 const express = require("express");
 const https = require("https");
 const fs = require("fs");
+const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 const XMLParser = require("fast-xml-parser").XMLParser;
 const fetch = require("node-fetch");
@@ -43,6 +44,11 @@ https
   .listen(apiPort, () => {
     console.log("Proxy server running on port " + apiPort);
   });
+api.use(
+  cors({
+    origin: "https://predomain.eth.limo",
+  })
+);
 const limiter = rateLimit({
   windowMs: 5 * 60 * 1000,
   max: 100,
