@@ -44,11 +44,7 @@ https
   .listen(apiPort, () => {
     console.log("Proxy server running on port " + apiPort);
   });
-api.use(
-  cors({
-    origin: "https://predomain.eth.limo",
-  })
-);
+api.use(cors());
 const limiter = rateLimit({
   windowMs: 5 * 60 * 1000,
   max: 100,
